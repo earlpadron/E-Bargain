@@ -10,12 +10,14 @@
         <module name="config-server" />
         <module name="discovery" />
         <module name="docker" />
+        <module name="customer" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-server" options="-parameters" />
+      <module name="customer" options="-parameters" />
       <module name="discovery" options="-parameters" />
       <module name="docker" options="-parameters" />
     </option>
