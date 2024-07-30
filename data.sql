@@ -1,0 +1,19 @@
+--CREATE DATABASE IF NOT EXISTS ECOMMERCE;
+--
+--USE ECOMMERCE;
+--
+--CREATE TABLE category(
+--    id INT NOT NULL AUTO_INCREMENT,
+--    description VARCHAR(255) NOT NULL,
+--    name VARCHAR(255) NOT NULL,
+--    PRIMARY KEY(id)
+--);
+--
+--CREATE TABLE product(
+--    id integer NOT NULL AUTO_INCREMENT,
+--    description VARCHAR(255) NOT NULL,
+--    name VARCHAR(255) NOT NULL,
+--    available_quantity INT,
+--    price DECIMAL(38,2)
+--    PRIMARY KEY(id)
+--)

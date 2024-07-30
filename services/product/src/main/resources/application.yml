@@ -1,25 +1,5 @@
-#spring:
-#  application:
-#    name: product-service
-#  config:
-#    import: optional:configserver:http://localhost:8888
 spring:
   application:
     name: product-service
-  datasource:
-    url: jdbc:postgresql://postgres:5432/product
-    username: earl
-    password: root
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create
-      format_sql: true
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-  cloud:
-    config:
-      enabled: false
-server:
-  port: 8050
+  config:
+    import: optional:configserver:http://localhost:8888

@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
 @Entity
 public class Product {
@@ -21,11 +21,10 @@ public class Product {
     private Integer id;
     private String name;
     private String description;
-    private Double availableQuantity;
+    private double availableQuantity;
     private BigDecimal price;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-
 }
