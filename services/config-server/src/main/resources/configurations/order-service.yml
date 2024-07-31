@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/ecommerce
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Ensure this driver class name is correct
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    show-sql: true # I added this most recently
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+server:
+  port: 8070
+
+application:
+  config:
+    customer-url: http://localhost:8090/api/v1/customers
+    product-url: http://localhost:8050/api/v1/products
+    payment-url: http://localhost:8060/api/v1/payments
+    #change ports to 8222 to refer to API Gateway and access load balanced server rather than directly connecting to the service

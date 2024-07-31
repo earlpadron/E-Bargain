@@ -30,7 +30,7 @@ public class CustomerController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CustomerResponse>>  indALl(){
+    public ResponseEntity<List<CustomerResponse>>  findAll(){
         return ResponseEntity.ok(service.findAll());
     }
 
@@ -41,7 +41,7 @@ public class CustomerController {
         return ResponseEntity.ok(service.existsById(customerId));
     }
 
-    @GetMapping("/exists/{customer-id}")
+    @GetMapping("/{customer-id}")
     public ResponseEntity<CustomerResponse> findById(
             @PathVariable("customer-id") String customerId
     ){
