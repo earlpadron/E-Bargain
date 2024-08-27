@@ -1,7 +1,6 @@
 package com.earl.order.handler;
 
 import com.earl.ecommerce.handler.ErrorResponse;
-import com.earl.ecommerce.product.exception.ProductPurchaseException;
 import com.earl.order.exception.BusinessException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
