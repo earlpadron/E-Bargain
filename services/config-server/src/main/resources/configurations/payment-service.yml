@@ -18,13 +18,4 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
-        spring.json.type.mapping: orderConfirmation:com.earl.order.kafka.OrderConfirmation
-server:
-  port: 8070
-
-application:
-  config:
-    customer-url: http://localhost:8090/api/v1/customers
-    product-url: http://localhost:8050/api/v1/products
-    payment-url: http://localhost:8060/api/v1/payments
-    #change ports to 8222 to refer to API Gateway and access load balanced server rather than directly connecting to the service
+        spring.json.type.mapping: paymentConfirmation:com.earl.payment.notification.PaymentNotificationRequest
