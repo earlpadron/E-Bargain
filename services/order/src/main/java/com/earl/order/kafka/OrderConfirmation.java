@@ -1,6 +1,6 @@
 package com.earl.order.kafka;
 
-import com.earl.order.PaymentMethod;
+import com.earl.order.order.PaymentMethod;
 import com.earl.order.customer.CustomerResponse;
 import com.earl.order.product.PurchaseResponse;
 

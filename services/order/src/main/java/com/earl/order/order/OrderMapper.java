@@ -1,4 +1,4 @@
-package com.earl.order;
+package com.earl.order.order;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.earl.order;
+package com.earl.order.order;
 
 import com.earl.order.product.PurchaseRequest;
 import jakarta.validation.constraints.NotBlank;

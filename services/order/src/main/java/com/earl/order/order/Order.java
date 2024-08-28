@@ -1,4 +1,4 @@
-package com.earl.order;
+package com.earl.order.order;
 
 import com.earl.order.orderline.OrderLine;
 import jakarta.persistence.*;

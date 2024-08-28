@@ -1,4 +1,4 @@
-package com.earl.order;
+package com.earl.order.order;
 
 import com.earl.order.customer.CustomerClient;
 import com.earl.order.exception.BusinessException;
@@ -6,12 +6,14 @@ import com.earl.order.kafka.OrderConfirmation;
 import com.earl.order.kafka.OrderProducer;
 import com.earl.order.orderline.OrderLineRequest;
 import com.earl.order.orderline.OrderLineService;
+import com.earl.order.payment.PaymentClient;
+
+import com.earl.order.payment.PaymentRequest;
 import com.earl.order.product.ProductClient;
 import com.earl.order.product.PurchaseRequest;
 import com.earl.order.product.PurchaseResponse;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ProblemDetail;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +29,7 @@ public class OrderService {
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
     public Integer createOrder(OrderRequest request){
         //check customer exists --> openfeign
@@ -52,6 +55,15 @@ public class OrderService {
         }
 
         //TODO:start payment process
+        var paymentRequest = new PaymentRequest( //2 different PaymentRequest types, can cause an issue
+                request.amount(),
+                request.paymentMethod(),
+                savedOrder.getId(),
+                savedOrder.getReference(),
+                customer
+        );
+        paymentClient.requestOrderPayment(paymentRequest);
+
 
         //TODO:send order confirmation --> notification-ms (kafka)
         orderProducer.sendOrderConfirmation(

@@ -1,6 +1,6 @@
 package com.earl.order.orderline;
 
-import com.earl.order.Order;
+import com.earl.order.order.Order;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
